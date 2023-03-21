@@ -3,6 +3,7 @@ import discord
 import time
 import random
 import requests
+import asyncio
 
 
 BOT_TOKEN = ""
@@ -11,12 +12,15 @@ CHANNEL_ID =
 bot = commands.Bot(command_prefix = "{", intents = discord.Intents.all())
 
 
+
 # On start
 @bot.event
 async def on_ready():
     print("hewwo :3")
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send("new commwands :3")
+    while True:
+        await reminder()
 
 # Lists all active commands
 @bot.command()
@@ -41,6 +45,12 @@ async def animerec(ctx):
 @bot.command()
 async def hello(ctx):
     await ctx.send("hewwo :3")
+
+# 5 min reminder #########DOES NOT WORK ###################
+async def reminder():
+    await asyncio.sleep(600)
+    await ctx.send ("Ullmano dessa notter :3")
+################### DOES NOT WORK #########################
 
 # Command that allows users to add two numbers
 @bot.command()
