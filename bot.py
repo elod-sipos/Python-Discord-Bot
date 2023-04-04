@@ -9,7 +9,7 @@ import asyncio
 BOT_TOKEN = ""
 CHANNEL_ID = 
 
-bot = commands.Bot(command_prefix = "{", intents = discord.Intents.all())
+bot = commands.Bot(command_prefix = "!", intents = discord.Intents.all())
 
 
 
